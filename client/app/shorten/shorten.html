@@ -1,4 +1,4 @@
-<div id='container'>
+<div>
   <!-- Your html here -->
   <div class = 'navigation'>
   <ul>
@@ -12,12 +12,13 @@
   </div>
 </div>
 
-  <div id='container'>
+  <div ng-controller="ShortenController">
     <h1></h1>
-    <form name="shorten" ng-submit='$scope.addLink(url)'>
-      <input type='text' ng-model='$scope.url' />
-      <button>shorten</button>
-      <h1>{{$scope.url}}</h1>
+    <form name="shorten" ng-submit='addLink($scope.url)'>
+      <input type='text' ng-change='checkUrl($scope.url)' ng-model='$scope.url' />
+      <button ng-disabled='isDisabled' >shorten</button>
+      <h3>{{test}}</h3>
+      <h3>{{$scope.url}}</h3>
     </form>
   </div>
 

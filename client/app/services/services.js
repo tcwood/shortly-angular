@@ -5,17 +5,17 @@ angular.module('shortly.services', [])
   var getAll = function() {
     return $http({
       method: 'GET',
-      url: '/api/links'
+      url: '/api/links/'
     }).then(function(res) {
       return res.data;
     });
-    
   };
 
   var addOne = function(url) {
+    console.log('url from post', url);
     return $http({
       method: 'POST',
-      url: '/api/links',
+      url: '/api/links/',
       data: url
     }).then(function(res) {
       return res;

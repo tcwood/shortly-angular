@@ -27,4 +27,18 @@ angular.module('shortly.auth', [])
         console.error(error);
       });
   };
+
+  $scope.isDisabled = true;
+
+  $scope.validPassword = function(password, username) {
+    password = password || '';
+    username = username || '';
+    if (password.length > 7 && username.length > 0) {
+      $scope.test = ' ';
+      $scope.isDisabled = false;
+    } else {
+      $scope.test = 'Username or password too short';
+      $scope.isDisabled = true;
+    }
+  };
 });
